@@ -93,7 +93,7 @@
                                 </tr>
                                 <tr> 
                                     <td class="bg-gradient fw-bold">Total Payable Hours (Working + Overtime - Attrition)</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">{{payrate['total']}}</td> 
+                                    <td class="bg-gradient fw-bold text-end w-25">{{payrate['totalhours']}}</td> 
                                 </tr>                                 
                             </tbody>                             
                         </table>
@@ -119,6 +119,17 @@
                                     <td class="bg-gradient fw-bold text-end w-25">{{payrate['totalincentive']}}</td> 
                                 </tr>                                 
                             </tbody>                             
+                        </table>
+                    </div>
+                    <div class="container">
+                        <h3>Total Receivable Pay</h3>
+                        <table class="bg-secondary shadow table table-bordered table-secondary text-body"> 
+                            <tbody> 
+                                <tr> 
+                                    <td class="bg-gradient fw-bold">Without Deductions</td> 
+                                    <td class="bg-gradient fw-bold text-end w-25">{{payrate['total']}}</td> 
+                                </tr>                                       
+                            </tbody>         
                         </table>
                     </div>
                 </main>

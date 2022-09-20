@@ -50,9 +50,10 @@ def dashboard():
     netpay = payablehour * pay
     overtime = pay + (pay * .30)
     special = pay * 2
-    grosspay = (netpay + (overtime * overtimehour)) - attrition
+    grosspay = (netpay + (overtime * overtimehour)) - (attrition * pay)
     payrate['incentive'] = skillincentive
     payrate['special'] = special * specialhour
+    payrate['totalhours'] = (payablehour + overtimehour) - attrition
     payrate['total'] = grosspay
     payrate['overtimetotal'] = overtime * overtimehour
     payrate['totalincentive'] = skillincentive + payrate['special'] + payrate['overtime']
