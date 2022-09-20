@@ -74,22 +74,26 @@
                                 <tr> 
                                     <td class="bg-gradient fw-bold">Pay Rate</td> 
                                     <td class="bg-gradient fw-bold text-end w-25">{{payrate['pay_rate']}}</td>
-                                </tr>                                 
+                                </tr>
+                                <tr> 
+                                    <td class="bg-gradient fw-bold">Regular Work Hours</td> 
+                                    <td class="bg-gradient fw-bold text-end w-25">{{payrate['standard_hours']}}</td>
+                                </tr>
                                 <tr> 
                                     <td class="bg-gradient fw-bold">Overtime Hours</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">20</td> 
+                                    <td class="bg-gradient fw-bold text-end w-25">{{payrate['overtime']}}</td> 
                                 </tr>                                 
                                 <tr> 
                                     <td class="bg-gradient fw-bold">Attrition (Late, Undertime, or Absent)</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">9</td> 
+                                    <td class="bg-gradient fw-bold text-end w-25">{{payrate['attrition']}}</td> 
                                 </tr>
                                 <tr> 
                                     <td class="bg-gradient fw-bold">Hours Worked During Holiday (Legal and Special)</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">8</td> 
+                                    <td class="bg-gradient fw-bold text-end w-25">{{payrate['special_hours']}}</td> 
                                 </tr>
                                 <tr> 
                                     <td class="bg-gradient fw-bold">Total Payable Hours (Working + Overtime - Attrition)</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">91</td> 
+                                    <td class="bg-gradient fw-bold text-end w-25">{{payrate['total']}}</td> 
                                 </tr>                                 
                             </tbody>                             
                         </table>
@@ -100,42 +104,19 @@
                             <tbody> 
                                 <tr> 
                                     <td class="bg-gradient fw-bold">Skill Specific Incentive</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">$1000.00</td> 
+                                    <td class="bg-gradient fw-bold text-end w-25">{{payrate['skill_incentive']}}</td> 
                                 </tr>                                 
                                 <tr> 
                                     <td class="bg-gradient fw-bold">Holiday Pay</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">$1000.00</td> 
+                                    <td class="bg-gradient fw-bold text-end w-25">{{payrate['special']}}</td> 
                                 </tr>                                 
                                 <tr> 
                                     <td class="bg-gradient fw-bold">Overtime Pay</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">$1000.00</td> 
+                                    <td class="bg-gradient fw-bold text-end w-25">{{payrate['overtimetotal']}}</td> 
                                 </tr>
                                 <tr> 
                                     <td class="bg-gradient fw-bold">Total Incentives</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">$3000.00</td> 
-                                </tr>                                 
-                            </tbody>                             
-                        </table>
-                    </div>
-                    <div class="container">
-                        <h3>Deductions</h3>
-                        <table class="bg-secondary shadow table table-bordered table-secondary text-body"> 
-                            <tbody> 
-                                <tr> 
-                                    <td class="bg-gradient fw-bold">SSS Contribution</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">$1000.00</td> 
-                                </tr>                                 
-                                <tr> 
-                                    <td class="bg-gradient fw-bold">PAGIBIG Contribution</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">$1000.00</td> 
-                                </tr>                                 
-                                <tr> 
-                                    <td class="bg-gradient fw-bold">Income Tax (0.00005%)</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">$1000.00</td> 
-                                </tr>
-                                <tr> 
-                                    <td class="bg-gradient fw-bold">Total Deductions</td> 
-                                    <td class="bg-gradient fw-bold text-end w-25">$3000.00</td> 
+                                    <td class="bg-gradient fw-bold text-end w-25">{{payrate['totalincentive']}}</td> 
                                 </tr>                                 
                             </tbody>                             
                         </table>

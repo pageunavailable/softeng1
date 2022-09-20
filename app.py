@@ -39,8 +39,23 @@ def login():
 def dashboard():
     id = session['id']
     cursor = mysql.connection.cursor()
-    cursor.execute("SELECT pay_rate FROM employee_list WHERE employee_id = %s", (id,))
+    cursor.execute("SELECT * FROM employee_data WHERE employee_id = %s", (id,))
     payrate = cursor.fetchone()
+    pay = payrate['pay_rate']
+    payablehour = payrate['standard_hours']
+    overtimehour = payrate['overtime']
+    attrition = payrate['attrition']
+    specialhour = payrate['special_hours']
+    skillincentive = payrate['skill_incentive']
+    netpay = payablehour * pay
+    overtime = pay + (pay * .30)
+    special = pay * 2
+    grosspay = (netpay + (overtime * overtimehour)) - attrition
+    payrate['incentive'] = skillincentive
+    payrate['special'] = special * specialhour
+    payrate['total'] = grosspay
+    payrate['overtimetotal'] = overtime * overtimehour
+    payrate['totalincentive'] = skillincentive + payrate['special'] + payrate['overtime']
     cursor.close()
     return render_template('dashboard.html', payrate=payrate)
 
