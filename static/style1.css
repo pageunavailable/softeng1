@@ -1,0 +1,11 @@
+.form-submit{
+    border: 1px solid black;
+}
+.form-input{
+    display: block;
+    width: 100%;
+}
+form{
+    border: 1px solid black;
+    width: 30%;
+}

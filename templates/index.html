@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <title>Payroll System | Log-in Screen</title>
+        <!-- Bootstrap core CSS -->
+        <link href="{{url_for('static', filename='bootstrap.min.css')}}" rel="stylesheet"/>
+        <!-- Custom styles for this template -->
+        <link href="{{url_for('static', filename='sign-in.css')}}" rel="stylesheet"/>
+    </head>
+    <body class="bg-gradient bg-light shadow-none text-center">
+        <main class="form-signin">
+            <form method="POST" action="{{url_for('login')}}">
+                <img class="mb-4" src="{{url_for('static', filename='salary.png')}}" alt="cashmoney" width="100" height="100"/>
+                <h1 class="border-dark display-4 fst-normal fw-semibold mb-3 shadow-none text-body">Sign-in to continue</h1>
+                <label class="visually-hidden">Email address</label>
+                <input type="number" name="username" id="username" class="form-control mb-3 mt-3" autofocus="" placeholder="Employee ID" required="true"/>
+                <label class="visually-hidden">Password</label>
+                <input type="password" name="password" id="password" class="form-control mb-3" placeholder="Password" required="true" maxlength="21"/>
+                <input class="w-100 btn btn-lg btn-primary" type="submit" placeholder="Submit">
+            </form>
+        </main>
+        <script src="{{url_for('static', filename='bootstrap.min.js')}}"></script>
+    </body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <title>Dashboard Template · Bootstrap v5.0</title>
+        <!-- Bootstrap core CSS -->
+        <link href="{{url_for('static', filename='bootstrap.min.css')}}" rel="stylesheet"/>
+        <!-- Custom styles for this template -->
+        <link href="{{url_for('static', filename='dashboard.css')}}" rel="stylesheet"/>
+        <link href="{{url_for('static', filename='chartjs.css')}}" rel="stylesheet"/>
+    </head>
+    <body>
+        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Totally Real Company LLC</a>
+            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap">
+                    <a class="nav-link" href="{{url_for('logout')}}">Sign out</a>
+                </li>
+            </ul>
+        </header>
+        <div class="container-fluid">
+            <div class="row">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <div class="position-sticky pt-3">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="{{url_for('dashboard')}}"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                    </svg>
+                                Dashboard </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="active nav-link" href="{{url_for('profile')}}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                Employee Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">Profile Page</h1>
+                    </div>
+                    <div class="container-fluid text-center">
+                        <picture></picture>
+                        <img src="https://cdn.discordapp.com/attachments/1013085875367850045/1020357463909879878/profile.png" width="250" height="250" class="border-dark m-5 m-lg-5 rounded-circle"/>
+                    </div>
+                    <div class="container">
+                        <h1 class="m-3">Personal Information</h1>
+                        <table class="bg-secondary shadow table table-bordered table-secondary text-body text-center w-100"> 
+                            <tbody> 
+                                <tr> 
+                                    <td class="bg-gradient fw-bold w-25">Name</td> 
+                                    <td class="bg-gradient fw-bold w-50">{{profile['name']}}</td> 
+                                </tr>                                 
+                                <tr> 
+                                    <td class="bg-gradient fw-bold w-25">Employee ID</td> 
+                                    <td class="bg-gradient fw-bold w-50">{{profile['employee_id']}}</td> 
+                                </tr>                                 
+                                <tr> 
+                                    <td class="bg-gradient fw-bold w-25">Address</td> 
+                                    <td class="bg-gradient fw-bold w-50">{{profile['address']}}</td> 
+                                </tr>
+                                <tr> 
+                                    <td class="bg-gradient fw-bold w-25">Position</td> 
+                                    <td class="bg-gradient fw-bold w-50">{{profile['position']}}</td> 
+                                </tr>
+                                <tr> 
+                                    <td class="bg-gradient fw-bold w-25">Age</td> 
+                                    <td class="bg-gradient fw-bold w-50">{{profile['age']}} Years Old</td> 
+                                </tr>                                 
+                            </tbody>                             
+                        </table>
+                    </div>
+                    <div class="container">
+                        <h1 class="m-3">Contact Information</h1>
+                        <table class="bg-secondary shadow table table-bordered table-secondary text-body text-center w-100"> 
+                            <tbody> 
+                                <tr> 
+                                    <td class="bg-gradient fw-bold w-25">Phone Number</td> 
+                                    <td class="bg-gradient fw-bold w-50">{{profile['contact']}}</td> 
+                                </tr>                                 
+                                <tr> 
+                                    <td class="bg-gradient fw-bold w-25">Email Address</td> 
+                                    <td class="bg-gradient fw-bold w-50">{{profile['email']}}</td> 
+                                </tr>                                 
+                            </tbody>                             
+                        </table>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="{{url_for('static', filename='bootstrap.min.js')}}"></script>
+    </body>
+</html>
